@@ -6,8 +6,6 @@
   <meta name="description" content="Alexis Sapp – EE @ Stanford University.">
 
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
-
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -16,53 +14,86 @@
       font-family: 'EB Garamond', serif;
       background-color: #f5f5f5;
       color: #333;
+      font-size: 13pt;
     }
 
-    /* Mobile stuff */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-      .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        padding: 20px;
-      }
-      .content {
-        margin-left: 0;
-        padding: 30px 20px;
-      }
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      border-bottom: 2px solid #FFC7D9;
+      display: flex;
+      align-items: center;
+      padding: 20px 60px;
+      z-index: 1000;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .header .profile-circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #FFC7D9;
+      margin-right: 25px;
+      flex-shrink: 0;
+    }
+
+    .header .profile-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .header .header-text h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .header .header-text h1 a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .header .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 6px;
+      font-size: 15px;
+      color: #000;
+    }
+
+    .header .contact-links a.email-link {
+      color: #FFC7D9;
+      text-decoration: none;
+    }
+
+    .header .contact-links a.icon-link {
+      font-size: 20px;
+      color: #FFC7D9;
     }
 
     .container {
       display: flex;
       min-height: 100vh;
+      margin-top: 200px; /* space for header */
     }
 
     .sidebar {
-      width: 180px;
+      width: 220px;
       background-color: #A9A9A9;
       padding: 30px 20px;
       position: fixed;
-      height: 100vh;
+      top: 200px; /* flush below header */
+      left: 0;
+      height: calc(100vh - 200px);
+      overflow-y: auto;
       text-align: center;
-    }
-
-    .profile-circle {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 0 auto 30px auto;
-      border: 3px solid #FFC7D9;
-    }
-
-    .profile-circle img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      alt: "Alexis Sapp headshot";
+      z-index: 999;
     }
 
     .sidebar nav a {
@@ -79,29 +110,9 @@
 
     .content {
       margin-left: 240px;
-      padding: 60px 80px;
-      max-width: 900px;
-    }
-
-    h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
-
-    .contact-row {
-      font-size: 17px;
-      margin-bottom: 40px;
-    }
-
-    .contact-row a {
-      color: #FFC7D9;
-      margin-right: 15px;
-      text-decoration: none;
-    }
-
-    .icon-link {
-      font-size: 20px;
-      margin-right: 10px;
+      padding: 30px 60px;
+      max-width: 1100px;
+      width: calc(100% - 240px);
     }
 
     h2 {
@@ -120,23 +131,74 @@
     p {
       line-height: 1.8;
       margin-top: 18px;
-      font-size: 18px;
+      font-size: 13pt;
+    }
+
+    a {
+      color: #FFC7D9;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     section {
       margin-bottom: 60px;
+      scroll-margin-top: 220px; /* ensures anchors scroll below fixed header */
+    }
+
+    @media (max-width: 1024px) {
+      .content {
+        margin-left: 220px;
+        width: calc(100% - 220px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        margin-top: 280px;
+      }
+      .sidebar {
+        width: 100%;
+        position: relative;
+        top: 0;
+        height: auto;
+        padding: 20px;
+      }
+      .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 30px 20px;
+      }
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 30px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-
-    <aside class="sidebar">
-      <div class="profile-circle">
-        <img src="images/headshot.jpeg" alt="Alexis Sapp headshot">
+  <header class="header">
+    <div class="profile-circle">
+      <img src="images/headshot.jpeg" alt="Alexis Sapp headshot">
+    </div>
+    <div class="header-text">
+      <h1><a href="#">Alexis Sapp</a></h1>
+      <div class="contact-links">
+        <span>Stanford University · Electrical Engineering, Hardware Software track, BS</span>
+        <a class="email-link" href="mailto:asapp15@stanford.edu">asapp15@stanford.edu</a>
+        <a class="icon-link" href="https://github.com/LexiSapp" target="_blank"><i class="fab fa-github"></i></a>
+        <a class="icon-link" href="https://linkedin.com/in/alexis-sapp" target="_blank"><i class="fab fa-linkedin"></i></a>
       </div>
+    </div>
+  </header>
 
+  <div class="container">
+    <aside class="sidebar">
       <nav>
         <a href="#about">About Me</a>
         <a href="#current">Current Focus</a>
@@ -148,22 +210,11 @@
     </aside>
 
     <main class="content">
-      <h1>Alexis Sapp</h1>
-
-      <div class="contact-row">
-        <a href="mailto:asapp15@stanford.edu">asapp15@stanford.edu</a> |
-        <span>Stanford University · Electrical Engineering, Hardware Software track, BS</span>
-        <p>
-          <a class="icon-link" href="https://github.com/LexiSapp" target="_blank"><i class="fab fa-github"></i></a>
-          <a class="icon-link" href="https://linkedin.com/in/alexis-sapp" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </p>
-      </div>
-
       <section id="about">
         <h2>About Me</h2>
         <p>
-          Hey there! I’m an Electrical Engineering major at Stanford University from Orlando, Florida, passionate about using technology to create impact and promote diversity in the tech community. I’m driven by a love for learning, collaboration, and building things that matter.
-        </p>
+        Hey there! I’m an Electrical Engineering major at Stanford University from Orlando, Florida, passionate about using technology to create impact and promote diversity in the tech community. I’m driven by a love for learning,
+          collaboration, and building things that matter.        </p>
         <p>
           When I’m not studying or coding, you’ll usually find me listening to music, taking photos, or experimenting with web design projects that blend creativity with technology.
         </p>
@@ -173,20 +224,21 @@
         <h2>Current Focus</h2>
 
         <h3 class="section-header">Life of Lex Archival Website</h3>
-        <p>
+       <p>
           I’m currently building a personal archival website that showcases my interests and creative explorations
           (<a href="https://lifeoflex.neocities.org/" target="_blank" style="color:#FFC7D9;">lifeoflex.neocities.org</a>).
           This project serves as a living portfolio where I collect and organize images, videos, and experimental media to reflect my evolving interests in technology, art, and visual storytelling.
         </p>
-
         <h3 class="section-header">Bitmapping Project</h3>
         <p>
-          A major part of this work involves creating a curated collection of images and videos using bitmapping techniques, transforming them into stylized digital forms that explore texture, composition, and abstraction.
+        A major part of this work involves creating a curated collection of images and videos using bitmapping techniques, transforming them into stylized digital forms that explore texture, composition, and abstraction.
         </p>
 
         <h3 class="section-header">Interactive TouchDesigner Installation</h3>
         <p>
-          Building on this, I’m developing an interactive installation using TouchDesigner, where these videos and images respond dynamically to user input, creating immersive visual experiences that blend coding, design, and interactivity. This project allows me to merge my technical skills with my creative pursuits, experimenting with how technology can enhance personal storytelling and artistic expression.
+        Building on this, I’m developing an interactive installation using TouchDesigner, where these videos and images respond dynamically to user input, creating immersive visual experiences that blend coding, 
+          design, and interactivity. This project allows me to merge my technical skills with my creative pursuits, experimenting with how technology can enhance personal storytelling and artistic expression.
+
         </p>
 
         <p><em>I will link the most recent projects here once they are complete, so stay tuned for updates.</em></p>
@@ -219,13 +271,18 @@
         </ul>
       </section>
 
-      <section id="awards">
+     <section id="awards">
         <h2>Honors & Awards</h2>
 
         <h3 class="section-header">International Baccalaureate Diploma</h3>
         <p><strong>Issued by:</strong> International Baccalaureate Program &mdash; Jul 2024</p>
         <ul>
           <li>Earned the IB Diploma, demonstrating academic excellence and a global perspective.</li>
+        </ul>
+                <h3 class="section-header">QuestBridge National College Match Recipient</h3>
+        <p><strong>Issued by:</strong> QuestBridge &mdash; Dec 2024</p>
+        <ul>
+          <li>Matched to Stanford with a full four-year scholarship through a competitive national program for high-achieving, low-income students.</li>
         </ul>
 
         <h3 class="section-header">OCPS Super Scholar</h3>
@@ -270,11 +327,7 @@
           <li>Selective program preparing high-impact students for acceptance into top colleges and universities.</li>
         </ul>
 
-        <h3 class="section-header">QuestBridge National College Match Recipient</h3>
-        <p><strong>Issued by:</strong> QuestBridge &mdash; Dec 2024</p>
-        <ul>
-          <li>Matched to Stanford with a full four-year scholarship through a competitive national program for high-achieving, low-income students.</li>
-        </ul>
+
       </section>
 
       <section id="skills">
