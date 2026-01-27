@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alexis Sapp – Electrical Engineering @ Stanford</title>
+  <meta name="description" content="Alexis Sapp – EE @ Stanford University.">
+
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'EB Garamond', serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    /* Mobile stuff */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+      }
+      .content {
+        margin-left: 0;
+        padding: 30px 20px;
+      }
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 180px;
+      background-color: #A9A9A9;
+      padding: 30px 20px;
+      position: fixed;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .profile-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 30px auto;
+      border: 3px solid #FFC7D9;
+    }
+
+    .profile-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      alt: "Alexis Sapp headshot";
+    }
+
+    .sidebar nav a {
+      display: block;
+      margin-bottom: 16px;
+      color: #FFC7D9;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .sidebar nav a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      margin-left: 240px;
+      padding: 60px 80px;
+      max-width: 900px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .contact-row {
+      font-size: 17px;
+      margin-bottom: 40px;
+    }
+
+    .contact-row a {
+      color: #FFC7D9;
+      margin-right: 15px;
+      text-decoration: none;
+    }
+
+    .icon-link {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+
+    h2 {
+      margin-top: 70px;
+      font-size: 28px;
+      border-bottom: 2px solid #4B2E2E;
+      padding-bottom: 6px;
+      width: fit-content;
+    }
+
+    h3.section-header {
+      color: #FFADC2;
+      text-decoration: underline;
+    }
+
+    p {
+      line-height: 1.8;
+      margin-top: 18px;
+      font-size: 18px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <aside class="sidebar">
+      <div class="profile-circle">
+        <img src="images/headshot.jpg" alt="Alexis Sapp headshot">
+      </div>
+
+      <nav>
+        <a href="#about">About Me</a>
+        <a href="#current">Current Focus</a>
+        <a href="#experience">Previous Experience</a>
+        <a href="#awards">Awards</a>
+        <a href="#skills">Technical Skills</a>
+        <a href="#involvement">Involvement on Campus</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <h1>Alexis Sapp</h1>
+
+      <div class="contact-row">
+        <a href="mailto:asapp15@stanford.edu">asapp15@stanford.edu</a> |
+        <span>Stanford University · Electrical Engineering, Hardware Software track, BS</span>
+        <p>
+          <a class="icon-link" href="https://github.com/LexiSapp" target="_blank"><i class="fab fa-github"></i></a>
+          <a class="icon-link" href="https://linkedin.com/in/alexis-sapp" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </p>
+      </div>
+
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          Hey there! I’m an Electrical Engineering major at Stanford University from Orlando, Florida, passionate about using technology to create impact and promote diversity in the tech community. I’m driven by a love for learning, collaboration, and building things that matter.
+        </p>
+        <p>
+          When I’m not studying or coding, you’ll usually find me listening to music, taking photos, or experimenting with web design projects that blend creativity with technology.
+        </p>
+      </section>
+
+      <section id="current">
+        <h2>Current Focus</h2>
+
+        <h3 class="section-header">Life of Lex Archival Website</h3>
+        <p>
+          I’m currently building a personal archival website that showcases my interests and creative explorations
+          (<a href="https://lifeoflex.neocities.org/" target="_blank" style="color:#FFC7D9;">lifeoflex.neocities.org</a>).
+          This project serves as a living portfolio where I collect and organize images, videos, and experimental media to reflect my evolving interests in technology, art, and visual storytelling.
+        </p>
+
+        <h3 class="section-header">Bitmapping Project</h3>
+        <p>
+          A major part of this work involves creating a curated collection of images and videos using bitmapping techniques, transforming them into stylized digital forms that explore texture, composition, and abstraction.
+        </p>
+
+        <h3 class="section-header">Interactive TouchDesigner Installation</h3>
+        <p>
+          Building on this, I’m developing an interactive installation using TouchDesigner, where these videos and images respond dynamically to user input, creating immersive visual experiences that blend coding, design, and interactivity. This project allows me to merge my technical skills with my creative pursuits, experimenting with how technology can enhance personal storytelling and artistic expression.
+        </p>
+
+        <p><em>I will link the most recent projects here once they are complete, so stay tuned for updates.</em></p>
+      </section>
+
+      <section id="experience">
+        <h2>Previous Experience</h2>
+
+        <h3 class="section-header">Amazon – Seattle, WA</h3>
+        <p><strong>Backend Systems Intern</strong> &mdash; June 2025</p>
+        <ul>
+          <li>Built an automated data auditor for Amazon S3 Tables, improving large-scale data reliability and backend validation processes.</li>
+          <li>Worked with TypeScript, Java, and AWS (S3, Kinesis, EventBridge) to develop scalable distributed systems.</li>
+          <li>Contributed to design reviews, testing pipelines, and debugging for production-ready backend tools.</li>
+          <li>Strengthened system reliability and collaboration through cross-team problem-solving and project ownership.</li>
+        </ul>
+
+        <h3 class="section-header">Stanford Summer Engineering Academy (SSEA) – Stanford, CA</h3>
+        <p><strong>Participant</strong> &mdash; August 2024</p>
+        <ul>
+          <li>Completed CS106A and Math 51 courses, gaining foundational computer science and mathematics knowledge.</li>
+          <li>Explored engineering disciplines and career paths through workshops, mentorship, and collaborative projects.</li>
+          <li>Built connections with peers and faculty while experiencing Stanford’s academic environment.</li>
+        </ul>
+
+        <h3 class="section-header">EA STEAM Camp – Orlando, FL</h3>
+        <p><strong>Participant</strong> &mdash; June 2023 / 2024</p>
+        <ul>
+          <li>Completed a 5-day program inspiring young women to pursue careers in computer science and engineering through interactive workshops and hands-on activities.</li>
+        </ul>
+      </section>
+
+      <section id="awards">
+        <h2>Honors & Awards</h2>
+
+        <h3 class="section-header">International Baccalaureate Diploma</h3>
+        <p><strong>Issued by:</strong> International Baccalaureate Program &mdash; Jul 2024</p>
+        <ul>
+          <li>Earned the IB Diploma, demonstrating academic excellence and a global perspective.</li>
+        </ul>
+
+        <h3 class="section-header">OCPS Super Scholar</h3>
+        <p><strong>Issued by:</strong> Orange County Public Schools &mdash; May 2024</p>
+        <ul>
+          <li>Recognized for academic achievement and acceptance into top-ranked colleges and service academies.</li>
+        </ul>
+
+        <h3 class="section-header">EEZ Scholarship</h3>
+        <p><strong>Issued by:</strong> EXQUISITE Epsilon Epsilon Zeta chapter of Zeta Phi Beta Sorority, Inc. &mdash; Apr 2024</p>
+        <ul>
+          <li>Financial award supporting talented students and alleviating financial stress.</li>
+        </ul>
+
+        <h3 class="section-header">Jack Kent Cooke Scholarship</h3>
+        <p><strong>Issued by:</strong> Jack Kent Cooke Foundation &mdash; Apr 2024</p>
+        <ul>
+          <li>Prestigious scholarship for high-achieving students with financial need, including personalized advising and networking opportunities.</li>
+        </ul>
+
+        <h3 class="section-header">Support Our Scholars Scholarship</h3>
+        <p><strong>Issued by:</strong> Support Our Scholars &mdash; Apr 2024</p>
+        <ul>
+          <li>Provides financial support and mentorship to academically exceptional female students in need.</li>
+        </ul>
+
+        <h3 class="section-header">American Legion Trophy – Oratorical Contest</h3>
+        <p><strong>Issued by:</strong> American Legion Post 331 &mdash; 2023</p>
+        <ul>
+          <li>Recognized as the first African-American female participant in the Legion’s oratory competition.</li>
+        </ul>
+
+        <h3 class="section-header">National African American Recognition Award</h3>
+        <p><strong>Issued by:</strong> College Board &mdash; Sep 2023</p>
+        <ul>
+          <li>Honored for academic achievement, high GPA, SAT, and AP performance.</li>
+        </ul>
+
+        <h3 class="section-header">Elevation Scholars Program</h3>
+        <p><strong>Issued by:</strong> Elevation Scholars &mdash; 2023</p>
+        <ul>
+          <li>Selective program preparing high-impact students for acceptance into top colleges and universities.</li>
+        </ul>
+
+        <h3 class="section-header">QuestBridge National College Match Recipient</h3>
+        <p><strong>Issued by:</strong> QuestBridge &mdash; Dec 2024</p>
+        <ul>
+          <li>Matched to Stanford with a full four-year scholarship through a competitive national program for high-achieving, low-income students.</li>
+        </ul>
+      </section>
+
+      <section id="skills">
+        <h2>Technical Skills</h2>
+
+        <h3 class="section-header">Programming Languages</h3>
+        <ul>
+          <li>Python, C#, Java, TypeScript, HTML, CSS, Git</li>
+        </ul>
+
+        <h3 class="section-header">Technical Expertise</h3>
+        <ul>
+          <li>AWS, backend development, distributed systems, data validation, cloud infrastructure, debugging & testing, scalable software design</li>
+        </ul>
+      </section>
+
+      <section id="involvement">
+        <h2>Campus Involvement</h2>
+
+        <h3 class="section-header">Alpha Kappa Alpha Sorority, Inc.</h3>
+        <p><strong>Financial Secretary & Official Hostess</strong></p>
+        <ul>
+          <li>Manage chapter finances, recording, tracking, and reporting all funds to ensure transparency and adherence to fiscal policies.</li>
+          <li>Serve as chapter hostess, welcoming guests, managing courtesies, and assisting with ceremonies and hospitality events.</li>
+        </ul>
+
+        <h3 class="section-header">Stanford First-Generation Low-Income Partnership (FLIP)</h3>
+        <p><strong>Member & Event Organizer</strong> &mdash; Oct 2024–Present</p>
+        <ul>
+          <li>Develop and coordinate programs supporting first-generation, low-income students, including professional development, financial literacy, and wellness initiatives.</li>
+          <li>Organize events focused on student engagement, mental health, and academic success.</li>
+        </ul>
+
+        <h3 class="section-header">Stanford Concert Network (SCN)</h3>
+        <p><strong>Member & Event Organizer</strong> &mdash; Oct 2024–Present</p>
+        <ul>
+          <li>Plan and execute campus concerts to foster community engagement and enhance student well-being through music.</li>
+          <li>Manage event logistics, artist coordination, and promotions in collaboration with team members.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
