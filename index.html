@@ -5,16 +5,29 @@
   <title>Alexis Sapp – Computer Science @ Stanford</title>
   <meta name="description" content="Alexis Sapp – CS @ Stanford University.">
 
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    :root {
+      --primary-pink: #FFC7D9;
+      --accent-pink: #d4819a; 
+      --bg-color: #fafafa;
+      --text-main: #2d2d2d;
+      --text-muted: #666;
+      --header-bg: rgba(255, 255, 255, 0.98);
+    }
+
+     {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: 'EB Garamond', serif;
-      background-color: #f5f5f5;
-      color: #333;
-      font-size: 13pt;
+      font-family: 'Inter', sans-serif; 
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
     }
 
     .header {
@@ -22,23 +35,24 @@
       top: 0;
       left: 0;
       width: 100%;
-      background-color: #fff;
-      border-bottom: 2px solid #FFC7D9;
+      background-color: var(--header-bg);
+      border-bottom: 1px solid #eee;
       display: flex;
       align-items: center;
-      padding: 20px 60px;
+      padding: 15px 80px;
       z-index: 1000;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      backdrop-filter: blur(8px);
     }
 
     .header .profile-circle {
-      width: 150px;
-      height: 150px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       overflow: hidden;
-      border: 3px solid #FFC7D9;
-      margin-right: 25px;
+      border: 3px solid var(--primary-pink);
+      margin-right: 30px;
       flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
     .header .profile-circle img {
@@ -49,11 +63,13 @@
 
     .header .header-text h1 {
       margin: 0;
-      font-size: 36px;
+      font-family: 'EB Garamond', serif;
+      font-size: 32px;
+      font-weight: 600;
     }
 
     .header .header-text h1 a {
-      color: #333;
+      color: var(--text-main);
       text-decoration: none;
     }
 
@@ -61,122 +77,134 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 10px;
-      margin-top: 6px;
-      font-size: 15px;
-      color: #000;
+      gap: 15px;
+      margin-top: 4px;
+      font-size: 14px;
+      color: var(--text-muted);
     }
 
-    .header .contact-links a.email-link {
-      color: #FFC7D9;
+    .header .contact-links a {
+      color: var(--accent-pink);
       text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
     }
 
-    .header .contact-links a.icon-link {
-      font-size: 20px;
-      color: #FFC7D9;
+    .header .contact-links a:hover {
+      opacity: 0.7;
+    }
+
+    .header .social-icons {
+      display: flex;
+      gap: 12px;
+      font-size: 18px;
     }
 
     .container {
       display: flex;
-      min-height: 100vh;
-      margin-top: 200px; 
+      max-width: 1200px;
+      margin: 180px auto 0; 
+      padding: 0 40px;
     }
 
     .sidebar {
-      width: 220px;
-      background-color: #A9A9A9;
-      padding: 30px 20px;
-      position: fixed;
-      top: 200px; 
-      left: 0;
-      height: calc(100vh - 200px);
-      overflow-y: auto;
-      text-align: center;
-      z-index: 999;
+      width: 200px;
+      position: sticky;
+      top: 180px;
+      height: fit-content;
+      padding-right: 20px;
     }
 
     .sidebar nav a {
       display: block;
-      margin-bottom: 16px;
-      color: #FFC7D9;
+      margin-bottom: 15px;
+      color: var(--text-muted);
       text-decoration: none;
-      font-size: 17px;
+      font-size: 15px;
+      font-weight: 400;
+      transition: all 0.3s ease;
+      border-left: 2px solid transparent;
+      padding-left: 10px;
     }
 
     .sidebar nav a:hover {
-      text-decoration: underline;
+      color: var(--accent-pink);
+      border-left: 2px solid var(--primary-pink);
     }
 
+    /* Content Area */
     .content {
-      margin-left: 240px;
-      padding: 30px 60px;
-      max-width: 1100px;
-      width: calc(100% - 240px);
-    }
-
-    h2 {
-      margin-top: 70px;
-      font-size: 28px;
-      border-bottom: 2px solid #4B2E2E;
-      padding-bottom: 6px;
-      width: fit-content;
-    }
-
-    h3.section-header {
-      color: #FFADC2;
-      text-decoration: underline;
-    }
-
-    p {
-      line-height: 1.8;
-      margin-top: 18px;
-      font-size: 13pt;
-    }
-
-    a {
-      color: #FFC7D9;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      flex: 1;
+      padding-left: 60px;
+      padding-bottom: 100px;
     }
 
     section {
-      margin-bottom: 60px;
-      scroll-margin-top: 220px; 
+      margin-bottom: 80px;
+      scroll-margin-top: 180px;
     }
 
-    @media (max-width: 1024px) {
-      .content {
-        margin-left: 220px;
-        width: calc(100% - 220px);
-      }
+    h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: 28px;
+      font-weight: 600;
+      border-bottom: 1px solid var(--primary-pink);
+      padding-bottom: 8px;
+      margin-bottom: 25px;
+      color: #1a1a1a;
     }
 
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        margin-top: 280px;
-      }
-      .sidebar {
-        width: 100%;
-        position: relative;
-        top: 0;
-        height: auto;
-        padding: 20px;
-      }
-      .content {
-        margin-left: 0;
-        width: 100%;
-        padding: 30px 20px;
-      }
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px 30px;
-      }
+    h3.section-header {
+      font-size: 19px;
+      font-weight: 600;
+      color: #444;
+      margin-top: 30px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #444;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      font-size: 15px;
+      color: #555;
+    }
+
+    li::marker {
+      color: var(--accent-pink);
+    }
+
+    strong {
+      color: #222;
+    }
+
+    em {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .header { padding: 15px 30px; }
+      .container { flex-direction: column; margin-top: 240px; padding: 0 20px; }
+      .sidebar { width: 100%; position: relative; top: 0; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+      .sidebar nav { display: flex; flex-wrap: wrap; gap: 15px; }
+      .content { padding-left: 0; }
+    }
+
+    @media (max-width: 600px) {
+      .header { flex-direction: column; text-align: center; height: auto; }
+      .header .profile-circle { margin-right: 0; margin-bottom: 15px; width: 80px; height: 80px; }
+      .container { margin-top: 300px; }
     }
   </style>
 </head>
@@ -190,11 +218,11 @@
       <h1><a href="#">Alexis Sapp</a></h1>
       <div class="contact-links">
         <span>Stanford University · Computer Science, BS</span>
-        <a class="email-link" href="mailto:asapp15@stanford.edu">asapp15@stanford.edu</a>
-        <p>
-        <a class="icon-link" href="https://github.com/LexiSapp" target="_blank"><i class="fab fa-github"></i></a>
-        <a class="icon-link" href="https://linkedin.com/in/alexis-sapp" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </p>
+        <a href="mailto:asapp15@stanford.edu">asapp15@stanford.edu</a>
+        <div class="social-icons">
+          <a href="https://github.com/LexiSapp" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/alexis-sapp" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
       </div>
     </div>
   </header>
@@ -204,10 +232,10 @@
       <nav>
         <a href="#about">About Me</a>
         <a href="#current">Current Focus</a>
-        <a href="#experience">Previous Experience</a>
+        <a href="#experience">Experience</a>
         <a href="#awards">Awards</a>
-        <a href="#skills">Technical Skills</a>
-        <a href="#involvement">Involvement on Campus</a>
+        <a href="#skills">Skills</a>
+        <a href="#involvement">Involvement</a>
       </nav>
     </aside>
 
@@ -215,8 +243,8 @@
       <section id="about">
         <h2>About Me</h2>
         <p>
-        Hey there! I’m a Computer Science major at Stanford University from Orlando, Florida, passionate about using technology to create impact and promote diversity in the tech community. I’m driven by a love for learning,
-          collaboration, and building things that matter.        </p>
+          Hey there! I’m a Computer Science major at Stanford University from Orlando, Florida, passionate about using technology to create impact and promote diversity in the tech community. I’m driven by a love for learning, collaboration, and building things that matter.
+        </p>
         <p>
           When I’m not studying or coding, you’ll usually find me listening to music, taking photos, or experimenting with web design projects that blend creativity with technology.
         </p>
@@ -224,150 +252,88 @@
 
       <section id="current">
         <h2>Current Focus</h2>
-
         <h3 class="section-header">Life of Lex Archival Website</h3>
-       <p>
-          I’m currently building a personal archival website that showcases my interests and creative explorations
-          (<a href="https://lifeoflex.neocities.org/" target="_blank" style="color:#FFC7D9;">lifeoflex.neocities.org</a>).
-          This project serves as a living portfolio where I collect and organize images, videos, and experimental media to reflect my evolving interests in technology, art, and visual storytelling.
+        <p>
+          I’m currently building a personal archival website that showcases my interests and creative explorations 
+          (<a href="https://lifeoflex.neocities.org/" target="_blank">lifeoflex.neocities.org</a>). 
+          This serves as a living portfolio where I collect and organize media to reflect my evolving interests in technology and visual storytelling.
         </p>
+        
         <h3 class="section-header">Bitmapping Project</h3>
         <p>
-        A major part of this work involves creating a curated collection of images and videos using bitmapping techniques, transforming them into stylized digital forms that explore texture, composition, and abstraction.
+          Creating a curated collection of images using bitmapping techniques, transforming them into stylized digital forms that explore texture and abstraction.
         </p>
 
         <h3 class="section-header">Interactive TouchDesigner Installation</h3>
         <p>
-        Building on this, I’m developing an interactive installation using TouchDesigner, where these videos and images respond dynamically to user input, creating immersive visual experiences that blend coding, 
-          design, and interactivity. This project allows me to merge my technical skills with my creative pursuits, experimenting with how technology can enhance personal storytelling and artistic expression.
-
+          Developing an interactive installation where videos and images respond dynamically to user input, blending technical coding skills with immersive artistic expression.
         </p>
-
-        <p><em>I will link the most recent projects here once they are complete, so stay tuned for updates.</em></p>
+        <p><em>I will link the most recent projects here once they are complete.</em></p>
       </section>
 
       <section id="experience">
         <h2>Previous Experience</h2>
-
         <h3 class="section-header">Amazon – Seattle, WA</h3>
-        <p><strong>Backend Systems Intern</strong> &mdash; June 2025</p>
+        <p><strong>Backend Systems Intern</strong> — June 2025</p>
         <ul>
-          <li>Built an automated data auditor for Amazon S3 Tables, improving large-scale data reliability and backend validation processes.</li>
-          <li>Worked with TypeScript, Java, and AWS (S3, Kinesis, EventBridge) to develop scalable distributed systems.</li>
-          <li>Contributed to design reviews, testing pipelines, and debugging for production-ready backend tools.</li>
-          <li>Strengthened system reliability and collaboration through cross-team problem-solving and project ownership.</li>
+          <li>Built an automated data auditor for Amazon S3 Tables, improving large-scale data reliability.</li>
+          <li>Developed scalable distributed systems using TypeScript, Java, and AWS (S3, Kinesis, EventBridge).</li>
+          <li>Contributed to design reviews, testing pipelines, and debugging for production-ready tools.</li>
         </ul>
 
-        <h3 class="section-header">Stanford Summer Engineering Academy (SSEA) – Stanford, CA</h3>
-        <p><strong>Participant</strong> &mdash; August 2024</p>
+        <h3 class="section-header">Stanford Summer Engineering Academy — Stanford, CA</h3>
+        <p><strong>Participant</strong> — August 2024</p>
         <ul>
-          <li>Completed CS106A and Math 51 courses, gaining foundational computer science and mathematics knowledge.</li>
-          <li>Explored engineering disciplines and career paths through workshops, mentorship, and collaborative projects.</li>
-          <li>Built connections with peers and faculty while experiencing Stanford’s academic environment.</li>
+          <li>Completed CS106A and Math 51 courses, gaining foundational CS and mathematics knowledge.</li>
+          <li>Explored engineering career paths through workshops and collaborative faculty mentorship.</li>
         </ul>
 
         <h3 class="section-header">EA STEAM Camp – Orlando, FL</h3>
-        <p><strong>Participant</strong> &mdash; June 2023 / 2024</p>
+        <p><strong>Participant</strong> — June 2023 / 2024</p>
         <ul>
-          <li>Completed a 5-day program inspiring young women to pursue careers in computer science and engineering through interactive workshops and hands-on activities.</li>
+          <li>Completed intensive programming designed to inspire young women to pursue careers in computer science.</li>
         </ul>
       </section>
 
-     <section id="awards">
+      <section id="awards">
         <h2>Honors & Awards</h2>
-
-        <h3 class="section-header">International Baccalaureate Diploma</h3>
-        <p><strong>Issued by:</strong> International Baccalaureate Program &mdash; Jul 2024</p>
-        <ul>
-          <li>Earned the IB Diploma, demonstrating academic excellence and a global perspective.</li>
-        </ul>
-                <h3 class="section-header">QuestBridge National College Match Recipient</h3>
-        <p><strong>Issued by:</strong> QuestBridge &mdash; Dec 2024</p>
-        <ul>
-          <li>Matched to Stanford with a full four-year scholarship through a competitive national program for high-achieving, low-income students.</li>
-        </ul>
-
-        <h3 class="section-header">OCPS Super Scholar</h3>
-        <p><strong>Issued by:</strong> Orange County Public Schools &mdash; May 2024</p>
-        <ul>
-          <li>Recognized for academic achievement and acceptance into top-ranked colleges and service academies.</li>
-        </ul>
-
-        <h3 class="section-header">EEZ Scholarship</h3>
-        <p><strong>Issued by:</strong> EXQUISITE Epsilon Epsilon Zeta chapter of Zeta Phi Beta Sorority, Inc. &mdash; Apr 2024</p>
-        <ul>
-          <li>Financial award supporting talented students and alleviating financial stress.</li>
-        </ul>
+        <h3 class="section-header">QuestBridge National College Match Recipient</h3>
+        <p>Matched to Stanford with a full four-year scholarship through a competitive national program.</p>
 
         <h3 class="section-header">Jack Kent Cooke Scholarship</h3>
-        <p><strong>Issued by:</strong> Jack Kent Cooke Foundation &mdash; Apr 2024</p>
-        <ul>
-          <li>Prestigious scholarship for high-achieving students with financial need, including personalized advising and networking opportunities.</li>
-        </ul>
-
-        <h3 class="section-header">Support Our Scholars Scholarship</h3>
-        <p><strong>Issued by:</strong> Support Our Scholars &mdash; Apr 2024</p>
-        <ul>
-          <li>Provides financial support and mentorship to academically exceptional female students in need.</li>
-        </ul>
+        <p>Awarded to high-achieving students with financial need, including personalized advising.</p>
 
         <h3 class="section-header">American Legion Trophy – Oratorical Contest</h3>
-        <p><strong>Issued by:</strong> American Legion Post 331 &mdash; 2023</p>
-        <ul>
-          <li>Recognized as the first African-American female participant in the Legion’s oratory competition.</li>
-        </ul>
+        <p>First African-American female participant recognized in the Legion’s oratory competition.</p>
 
-        <h3 class="section-header">National African American Recognition Award</h3>
-        <p><strong>Issued by:</strong> College Board &mdash; Sep 2023</p>
-        <ul>
-          <li>Honored for academic achievement, high GPA, SAT, and AP performance.</li>
-        </ul>
-
-        <h3 class="section-header">Elevation Scholars Program</h3>
-        <p><strong>Issued by:</strong> Elevation Scholars &mdash; 2023</p>
-        <ul>
-          <li>Selective program preparing high-impact students for acceptance into top colleges and universities.</li>
-        </ul>
-
-
+        <h3 class="section-header">International Baccalaureate Diploma</h3>
+        <p>Demonstrated academic excellence and a global perspective through the IB program.</p>
       </section>
 
       <section id="skills">
         <h2>Technical Skills</h2>
-
         <h3 class="section-header">Programming Languages</h3>
         <ul>
           <li>Python, C#, Java, TypeScript, HTML, CSS, Git</li>
         </ul>
-
         <h3 class="section-header">Technical Expertise</h3>
         <ul>
-          <li>AWS, backend development, distributed systems, data validation, cloud infrastructure, debugging & testing, scalable software design</li>
+          <li>AWS, backend development, distributed systems, data validation, cloud infrastructure.</li>
         </ul>
       </section>
 
       <section id="involvement">
         <h2>Campus Involvement</h2>
-
         <h3 class="section-header">Alpha Kappa Alpha Sorority, Inc.</h3>
         <p><strong>Financial Secretary & Official Hostess</strong></p>
         <ul>
-          <li>Manage chapter finances, recording, tracking, and reporting all funds to ensure transparency and adherence to fiscal policies.</li>
-          <li>Serve as chapter hostess, welcoming guests, managing courtesies, and assisting with ceremonies and hospitality events.</li>
+          <li>Manage chapter finances and fiscal reporting to ensure transparency and policy adherence.</li>
+          <li>Coordinate hospitality events and ceremonies as official chapter hostess.</li>
         </ul>
 
         <h3 class="section-header">Stanford First-Generation Low-Income Partnership (FLIP)</h3>
-        <p><strong>Member & Event Organizer</strong> &mdash; Oct 2024–Present</p>
         <ul>
-          <li>Develop and coordinate programs supporting first-generation, low-income students, including professional development, financial literacy, and wellness initiatives.</li>
-          <li>Organize events focused on student engagement, mental health, and academic success.</li>
-        </ul>
-
-        <h3 class="section-header">Stanford Concert Network (SCN)</h3>
-        <p><strong>Member & Event Organizer</strong> &mdash; Oct 2024–Present</p>
-        <ul>
-          <li>Plan and execute campus concerts to foster community engagement and enhance student well-being through music.</li>
-          <li>Manage event logistics, artist coordination, and promotions in collaboration with team members.</li>
+          <li>Coordinate programs supporting FGLI students, focusing on professional development and wellness.</li>
         </ul>
       </section>
     </main>
