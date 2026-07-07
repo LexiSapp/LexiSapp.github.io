@@ -18,13 +18,11 @@
       --header-bg: rgba(255, 255, 255, 0.98);
     }
 
-     {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif; 
+      font-family: 'Inter', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-main);
       line-height: 1.6;
@@ -52,7 +50,6 @@
       border: 3px solid var(--primary-pink);
       margin-right: 30px;
       flex-shrink: 0;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
     .header .profile-circle img {
@@ -65,7 +62,6 @@
       margin: 0;
       font-family: 'EB Garamond', serif;
       font-size: 32px;
-      font-weight: 600;
     }
 
     .header .header-text h1 a {
@@ -87,11 +83,6 @@
       color: var(--accent-pink);
       text-decoration: none;
       font-weight: 500;
-      transition: opacity 0.2s;
-    }
-
-    .header .contact-links a:hover {
-      opacity: 0.7;
     }
 
     .header .social-icons {
@@ -103,7 +94,7 @@
     .container {
       display: flex;
       max-width: 1200px;
-      margin: 180px auto 0; 
+      margin: 180px auto 0;
       padding: 0 40px;
     }
 
@@ -112,7 +103,6 @@
       position: sticky;
       top: 180px;
       height: fit-content;
-      padding-right: 20px;
     }
 
     .sidebar nav a {
@@ -121,10 +111,9 @@
       color: var(--text-muted);
       text-decoration: none;
       font-size: 15px;
-      font-weight: 400;
-      transition: all 0.3s ease;
       border-left: 2px solid transparent;
       padding-left: 10px;
+      transition: 0.3s;
     }
 
     .sidebar nav a:hover {
@@ -132,79 +121,80 @@
       border-left: 2px solid var(--primary-pink);
     }
 
-    /* Content Area */
     .content {
       flex: 1;
       padding-left: 60px;
       padding-bottom: 100px;
     }
 
-    section {
-      margin-bottom: 80px;
-      scroll-margin-top: 180px;
-    }
+    section { margin-bottom: 80px; scroll-margin-top: 180px; }
 
     h2 {
       font-family: 'EB Garamond', serif;
       font-size: 28px;
-      font-weight: 600;
       border-bottom: 1px solid var(--primary-pink);
       padding-bottom: 8px;
       margin-bottom: 25px;
-      color: #1a1a1a;
     }
 
-    h3.section-header {
-      font-size: 19px;
-      font-weight: 600;
-      color: #444;
-      margin-top: 30px;
-      margin-bottom: 8px;
+    h3.section-header { font-size: 19px; font-weight: 600; margin-top: 30px; margin-bottom: 8px; }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 25px;
     }
 
-    p {
-      margin-top: 10px;
-      font-size: 16px;
-      color: #444;
+    .project-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    ul {
-      padding-left: 20px;
-      margin-top: 10px;
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      border-color: var(--primary-pink);
     }
 
-    li {
-      margin-bottom: 8px;
-      font-size: 15px;
-      color: #555;
+    .project-video {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: #000;
+      display: block;
     }
 
-    li::marker {
+    .project-info {
+      padding: 15px;
+    }
+
+    .project-info h4 {
+      margin: 0 0 8px 0;
       color: var(--accent-pink);
+      font-size: 17px;
     }
 
-    strong {
-      color: #222;
-    }
-
-    em {
-      color: var(--text-muted);
+    .project-info p {
+      margin: 0;
       font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.4;
     }
 
-    /* Responsive Design */
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; font-size: 15px; }
+    li::marker { color: var(--accent-pink); }
+
     @media (max-width: 900px) {
       .header { padding: 15px 30px; }
       .container { flex-direction: column; margin-top: 240px; padding: 0 20px; }
-      .sidebar { width: 100%; position: relative; top: 0; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+      .sidebar { width: 100%; position: relative; top: 0; margin-bottom: 40px; }
       .sidebar nav { display: flex; flex-wrap: wrap; gap: 15px; }
       .content { padding-left: 0; }
-    }
-
-    @media (max-width: 600px) {
-      .header { flex-direction: column; text-align: center; height: auto; }
-      .header .profile-circle { margin-right: 0; margin-bottom: 15px; width: 80px; height: 80px; }
-      .container { margin-top: 300px; }
     }
   </style>
 </head>
@@ -212,7 +202,7 @@
 <body>
   <header class="header">
     <div class="profile-circle">
-      <img src="images/headshot.jpeg" alt="Alexis Sapp headshot">
+      <img src="images/headshot.jpeg" alt="Alexis Sapp">
     </div>
     <div class="header-text">
       <h1><a href="#">Alexis Sapp</a></h1>
@@ -242,33 +232,47 @@
     <main class="content">
       <section id="about">
         <h2>About Me</h2>
-        <p>
-          Hey there! I’m a Computer Science major at Stanford University from Orlando, Florida, passionate about using technology to create impact and promote diversity in the tech community. I’m driven by a love for learning, collaboration, and building things that matter.
-        </p>
-        <p>
-          When I’m not studying or coding, you’ll usually find me listening to music, taking photos, or experimenting with web design projects that blend creativity with technology.
-        </p>
+        <p>Hey there! I’m a Computer Science major at Stanford University from Orlando, Florida, passionate about using technology to create impact and promote diversity in the tech community. I’m driven by a love for learning, collaboration, and building things that matter.</p>
+        <p>When I’m not studying or coding, you’ll usually find me listening to music, taking photos, or experimenting with web design projects that blend creativity with technology.</p>
       </section>
 
       <section id="current">
         <h2>Current Focus</h2>
-        <h3 class="section-header">Life of Lex Archival Website</h3>
-        <p>
-          I’m currently building a personal archival website that showcases my interests and creative explorations 
-          (<a href="https://lifeoflex.neocities.org/" target="_blank">lifeoflex.neocities.org</a>). 
-          This serves as a living portfolio where I collect and organize media to reflect my evolving interests in technology and visual storytelling.
-        </p>
         
-        <h3 class="section-header">Bitmapping Project</h3>
-        <p>
-          Creating a curated collection of images using bitmapping techniques, transforming them into stylized digital forms that explore texture and abstraction.
-        </p>
+        <div class="project-grid">
+          <div class="project-card">
+            <video class="project-video" autoplay muted loop playsinline preload="auto">
+              <source src="videos/TD_ASCII.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="project-info">
+              <h4>Bitmapping Project</h4>
+              <p>Creating a curated collection of images using bitmapping techniques, transforming them into stylized digital forms that explore texture and abstraction.</p>
+            </div>
+          </div>
 
-        <h3 class="section-header">Interactive TouchDesigner Installation</h3>
-        <p>
-          Developing an interactive installation where videos and images respond dynamically to user input, blending technical coding skills with immersive artistic expression.
-        </p>
-        <p><em>I will link the most recent projects here once they are complete.</em></p>
+          <div class="project-card">
+            <video class="project-video" autoplay muted loop playsinline preload="auto">
+              <source src="videos/installation.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="project-info">
+              <h4>Interactive TouchDesigner Installation</h4>
+              <p>Developing an interactive installation where videos and images respond dynamically to user input, blending technical coding skills with immersive artistic expression.</p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div style="height: 180px; background: var(--primary-pink); display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-archive" style="font-size: 50px; color: white;"></i>
+            </div>
+            <div class="project-info">
+              <h4>Life of Lex Archival Website</h4>
+              <p>I’m currently building a personal archival website that showcases my interests and creative explorations (<a href="https://lifeoflex.neocities.org/" target="_blank">lifeoflex.neocities.org</a>). This serves as a living portfolio where I collect and organize media to reflect my evolving interests in technology and visual storytelling.</p>
+            </div>
+          </div>
+        </div>
+        <p style="margin-top: 25px; font-size: 14px; color: var(--text-muted); font-style: italic;">I will link the most recent projects here once they are complete.</p>
       </section>
 
       <section id="experience">
@@ -285,7 +289,7 @@
         <p><strong>Participant</strong> — August 2024</p>
         <ul>
           <li>Completed CS106A and Math 51 courses, gaining foundational CS and mathematics knowledge.</li>
-          <li>Explored engineering career paths through workshops and collaborative faculty mentorship.</li>
+          <li>Explores engineering career paths through workshops and collaborative faculty mentorship.</li>
         </ul>
 
         <h3 class="section-header">EA STEAM Camp – Orlando, FL</h3>
@@ -299,7 +303,7 @@
         <h2>Honors & Awards</h2>
         <h3 class="section-header">QuestBridge National College Match Recipient</h3>
         <p>Matched to Stanford with a full four-year scholarship through a competitive national program.</p>
-
+        
         <h3 class="section-header">Jack Kent Cooke Scholarship</h3>
         <p>Awarded to high-achieving students with financial need, including personalized advising.</p>
 
@@ -330,7 +334,6 @@
           <li>Manage chapter finances and fiscal reporting to ensure transparency and policy adherence.</li>
           <li>Coordinate hospitality events and ceremonies as official chapter hostess.</li>
         </ul>
-
         <h3 class="section-header">Stanford First-Generation Low-Income Partnership (FLIP)</h3>
         <ul>
           <li>Coordinate programs supporting FGLI students, focusing on professional development and wellness.</li>
