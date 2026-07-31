@@ -224,7 +224,7 @@
         <a href="#current">Current Focus</a>
         <a href="#experience">Experience</a>
         <a href="#awards">Awards</a>
-        <a href="#skills">Skills</a>
+        <a href="#skills">Skills & Certs</a>
         <a href="#involvement">Involvement</a>
       </nav>
     </aside>
@@ -232,65 +232,83 @@
     <main class="content">
       <section id="about">
         <h2>About Me</h2>
-        <p>Hey there! I’m a Computer Science major at Stanford University from Orlando, Florida, passionate about using technology to create impact and promote diversity in the tech community. I’m driven by a love for learning, collaboration, and building things that matter.</p>
+        <p>Hey there! I’m a Computer Science major at Stanford University (HCI focus) from Orlando, Florida, passionate about using technology to create impact and promote diversity in the tech community. I spent Spring 2026 studying abroad in Berlin, Germany, focusing on electronics, theatre, and German language immersion.</p>
         <p>When I’m not studying or coding, you’ll usually find me listening to music, taking photos, or experimenting with web design projects that blend creativity with technology.</p>
       </section>
 
       <section id="current">
         <h2>Current Focus</h2>
         
-<div class="project-grid">
-  <a href="downloads/workingASCII.toe" download style="text-decoration: none; color: inherit;">
-    <div class="project-card">
-      <video class="project-video" autoplay muted loop playsinline preload="auto">
-        <source src="videos/TD_ASCII.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="project-info">
-        <h4>Bitmapping Project <i class="fas fa-download" style="font-size: 14px; margin-left: 6px;"></i></h4>
-        <p>Creating a curated collection of images using bitmapping techniques, transforming them into stylized digital forms that explore texture and abstraction. <em>(Click to download)</em></p>
-      </div>
-    </div>
-  </a>
+        <div class="project-grid">
+          <a href="downloads/workingASCII.toe" download style="text-decoration: none; color: inherit;">
+            <div class="project-card">
+              <video class="project-video" autoplay muted loop playsinline preload="auto">
+                <source src="videos/TD_ASCII.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="project-info">
+                <h4>Bitmapping Project <i class="fas fa-download" style="font-size: 14px; margin-left: 6px;"></i></h4>
+                <p>Creating a curated collection of images using bitmapping techniques, transforming them into stylized digital forms that explore texture and abstraction. <em>(Click to download)</em></p>
+              </div>
+            </div>
+          </a>
 
-<div class="project-card">
-  <video class="project-video" autoplay muted loop playsinline preload="auto">
-    <source src="videos/German_Learning_Bot.mp4" type="video/mp4">
-  </video>
-  <div class="project-info">
-    <h4>German Learning AI Chatbot</h4>
-    <p>Designed and built a rule-based AI chatbot tailored for German language practice. Created as an interactive tool to practice conversing, master key phrases, and refine grammar patterns in real time.</p>
-  </div>
-</div>
+          <div class="project-card">
+            <video class="project-video" autoplay muted loop playsinline preload="auto">
+              <source src="videos/German_Learning_Bot.mp4" type="video/mp4">
+            </video>
+            <div class="project-info">
+              <h4>German Learning AI Chatbot</h4>
+              <p>Designed and built a rule-based AI chatbot tailored for German language practice. Created as an interactive tool to practice conversing, master key phrases, and refine grammar patterns in real time.</p>
+            </div>
+          </div>
 
-<div class="project-card">
-  <video class="project-video" autoplay muted loop playsinline preload="auto">
-    <source src="videos/LifeOfLexDemo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="project-info">
-    <h4>Life of Lex Archival Website</h4>
-    <p>I’m currently building a personal archival website that showcases my interests and creative explorations (<a href="https://lifeoflex.neocities.org/" target="_blank">lifeoflex.neocities.org</a>). This serves as a living portfolio where I collect and organize media to reflect my evolving interests in technology and visual storytelling.</p>
-  </div>
-</div>
+          <div class="project-card">
+            <video class="project-video" autoplay muted loop playsinline preload="auto">
+              <source src="videos/LifeOfLexDemo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="project-info">
+              <h4>Life of Lex Archival Website</h4>
+              <p>I’m currently building a personal archival website that showcases my interests and creative explorations (<a href="https://lifeoflex.neocities.org/" target="_blank">lifeoflex.neocities.org</a>). This serves as a living portfolio where I collect and organize media to reflect my evolving interests in technology and visual storytelling.</p>
+            </div>
+          </div>
+        </div>
         <p style="margin-top: 25px; font-size: 14px; color: var(--text-muted); font-style: italic;">I will link the most recent projects here once they are complete.</p>
       </section>
 
       <section id="experience">
         <h2>Previous Experience</h2>
-        <h3 class="section-header">Amazon – Seattle, WA</h3>
-        <p><strong>Backend Systems Intern</strong> — June 2025</p>
+
+        <h3 class="section-header">Stanford in Berlin — Berlin, Germany</h3>
+        <p><strong>Study Abroad Student</strong> — Spring 2026</p>
         <ul>
-          <li>Built an automated data auditor for Amazon S3 Tables, improving large-scale data reliability.</li>
-          <li>Developed scalable distributed systems using TypeScript, Java, and AWS (S3, Kinesis, EventBridge).</li>
-          <li>Contributed to design reviews, testing pipelines, and debugging for production-ready tools.</li>
+          <li>Completed immersive coursework in German language, electronics (ENGR 40M), and theatre.</li>
+          <li>Built and debugged custom hardware/electronics prototypes from scratch and developed interactive TouchDesigner installations in physical computing spaces.</li>
+        </ul>
+        
+        <h3 class="section-header">Amazon – Seattle, WA</h3>
+        <p><strong>Backend Systems Intern (Software Development Engineer)</strong> — June 2026 – August 2026</p>
+        <ul>
+          <li>Designed and implemented a standalone configuration service from scratch, consolidating data previously maintained separately across two critical systems with incompatible formats.</li>
+          <li>Built a build-time validation framework enforcing tree-structure constraints (cycle detection, depth limits, referential integrity), preventing invalid configurations from reaching production.</li>
+          <li>Resolved an issue causing more than 150 Sev2 alarms on a monthly basis.</li>
+        </ul>
+
+        <h3 class="section-header">Amazon – Seattle, WA</h3>
+        <p><strong>Backend Systems Intern (Software Development Engineer)</strong> — June 2025 – September 2025</p>
+        <ul>
+          <li>Built an automated data auditor for Amazon S3 Tables, improving large-scale data reliability and backend validation processes.</li>
+          <li>Utilized TypeScript, Java, and AWS (S3, Kinesis, EventBridge) to develop scalable distributed systems.</li>
+          <li>Contributed to design reviews, testing pipelines, and debugging for production-ready backend tools.</li>
+          <li>Strengthened system reliability and collaboration through cross-team problem-solving and project ownership.</li>
         </ul>
 
         <h3 class="section-header">Stanford Summer Engineering Academy — Stanford, CA</h3>
         <p><strong>Participant</strong> — August 2024</p>
         <ul>
           <li>Completed CS106A and Math 51 courses, gaining foundational CS and mathematics knowledge.</li>
-          <li>Explores engineering career paths through workshops and collaborative faculty mentorship.</li>
+          <li>Explored engineering career paths through workshops and collaborative faculty mentorship.</li>
         </ul>
 
         <h3 class="section-header">EA STEAM Camp – Orlando, FL</h3>
@@ -316,25 +334,44 @@
       </section>
 
       <section id="skills">
-        <h2>Technical Skills</h2>
+        <h2>Technical Skills & Certifications</h2>
         <h3 class="section-header">Programming Languages</h3>
         <ul>
-          <li>Python, C#, Java, TypeScript, HTML, CSS, Git</li>
+          <li>Python, C#, Java, TypeScript, HTML, CSS, JavaScript, Git</li>
         </ul>
         <h3 class="section-header">Technical Expertise</h3>
         <ul>
-          <li>AWS, backend development, distributed systems, data validation, cloud infrastructure.</li>
+          <li>AWS (S3, Kinesis, EventBridge), TouchDesigner, Physical Computing, Circuit Design, Backend Development, Distributed Systems, Data Validation, Debugging & Testing.</li>
+        </ul>
+        <h3 class="section-header">Certifications</h3>
+        <ul>
+          <li><strong>AWS Fundamentals of Machine Learning and Artificial Intelligence</strong> — June 2026</li>
+          <p>Certificate gained for knowledge in Machine Learning and Artificial Intelligence</p>
         </ul>
       </section>
 
       <section id="involvement">
-        <h2>Campus Involvement</h2>
+        <h2>Campus Involvement & Ambassadorships</h2>
+        
+        <h3 class="section-header">Coca-Cola Campus Ambassador</h3>
+        <p><strong>Stanford University</strong></p>
+        <ul>
+          <li>Represent Coca-Cola on campus by organizing engaging brand activations, digital content campaigns, and student outreach events.</li>
+        </ul>
+
+        <h3 class="section-header">Stanford in Berlin Campus Ambassador</h3>
+        <p><strong>Stanford Bing Overseas Studies Program</strong></p>
+        <ul>
+          <li>Advise prospective study abroad students, sharing insights on living in Berlin, curriculum navigation, and cultural integration.</li>
+        </ul>
+
         <h3 class="section-header">Alpha Kappa Alpha Sorority, Inc.</h3>
         <p><strong>Financial Secretary & Official Hostess</strong></p>
         <ul>
           <li>Manage chapter finances and fiscal reporting to ensure transparency and policy adherence.</li>
           <li>Coordinate hospitality events and ceremonies as official chapter hostess.</li>
         </ul>
+
         <h3 class="section-header">Stanford First-Generation Low-Income Partnership (FLIP)</h3>
         <ul>
           <li>Coordinate programs supporting FGLI students, focusing on professional development and wellness.</li>
